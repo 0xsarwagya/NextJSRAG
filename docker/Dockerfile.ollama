@@ -1,0 +1,17 @@
+# Use the Ollama base image as the builder stage
+FROM ollama/ollama as builder
+
+# Copy the setup script from the local 'scripts' directory to the root of the container
+COPY ./scripts/setup-ollama.sh ./setup-ollama.sh
+
+# Execute the setup script to configure the Ollama environment
+RUN bash ./setup-ollama.sh
+
+# Start a new stage from the Ollama base image to create the final image
+FROM ollama/ollama
+
+# Copy the configured Ollama setup from the builder stage to the final image
+COPY --from=builder /root/.ollama /root/.ollama
+
+# Expose port 11434 for external access to the application
+EXPOSE 11434

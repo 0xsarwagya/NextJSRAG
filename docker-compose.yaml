@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+  ollama:
+    build:
+      context: .
+      dockerfile: ./docker/Dockerfile.ollama
+    ports: [ "11434:11434" ]
+    volumes:
+      - ollama_data:/root/.ollama
+    networks:
+      - net
+
+volumes:
+  ollama_data:
+    driver: local
+
+networks:
+  net:
+    driver: bridge
