@@ -2,6 +2,7 @@ import React from "react";
 import "@/styles/globals.css";
 import { ContentNavbar } from "@/components/content/navbar";
 import { Footer } from "@/components/admin-panel/footer";
+import { revalidatePath } from "next/cache";
 
 export default function MarketingLayout({
   children,

@@ -1,5 +1,7 @@
 # Next.js RAG (Retrieval-Augmented Generation)
 
+![Alt text](./public//demo.png)
+
 **Next.js RAG** is an open-source project that implements a Retrieval-Augmented Generation (RAG) feature using **Next.js**, **Langchain**, and **Ollama**. This project is designed to help developers integrate RAG capabilities into their Next.js applications, offering real-time, data-driven insights powered by language models.
 
 This project is an extraction of a core feature embedded in **Rebackk** to enhance AI capabilities in customer interactions and security incident management. While the embedded version remains private, we are excited to offer this open-source version to help others leverage RAG in their own applications.
