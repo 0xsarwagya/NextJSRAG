@@ -25,6 +25,9 @@ const nextConfig = {
       },
     ];
   },
+  experimental: {
+    turbo: false,
+  },
 };
 
 const withMDX = createMDX({

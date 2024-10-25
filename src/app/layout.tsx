@@ -1,6 +1,5 @@
 import "@/styles/globals.css";
 import { Poppins, Roboto, Fira_Code, Lato } from "next/font/google";
-import { ToastProvider } from "@/components/ui/toast";
 import { Metadata } from "next";
 import { Toaster } from "@/components/ui/toaster";
 import { AppBar } from "./_providers/progress-bar";
@@ -9,6 +8,7 @@ export const metadata: Metadata = {
   title: "RAG Demo | Rebackk",
   description:
     "Retrieval Augmented Generation Demo using Next.js, OLLAMA and VercelAI. For The Community, By Rebackk.",
+  icons: "/logo.svg",
 };
 
 const poppins = Poppins({

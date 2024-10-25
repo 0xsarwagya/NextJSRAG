@@ -9,6 +9,7 @@ import { ScrollArea } from "@/components/ui/scroll-area";
 import {
   Card,
   CardContent,
+  CardDescription,
   CardFooter,
   CardHeader,
   CardTitle,
@@ -17,6 +18,7 @@ import { Send, Loader2, User, Bot } from "lucide-react";
 import ReactMarkdown from "react-markdown";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { atomDark } from "react-syntax-highlighter/dist/esm/styles/prism";
+import { env } from "@/env";
 
 const TypingAnimation = () => (
   <div className="flex space-x-1">
@@ -82,6 +84,14 @@ export const Chat = () => {
     <Card className="w-full bg-transparent shadow-none border-0">
       <CardHeader>
         <CardTitle>Chat</CardTitle>
+        <CardDescription>
+          {env.NEXT_PUBLIC_IS_DEMO === "true" && (
+            <p>
+              The chatbot might be slow to respond because this is a demo. Spin
+              up your own instance for better performance.
+            </p>
+          )}
+        </CardDescription>
       </CardHeader>
       <CardContent>
         <ScrollArea className="h-[50vh] pr-4" ref={scrollAreaRef}>
