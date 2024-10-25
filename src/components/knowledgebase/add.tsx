@@ -18,6 +18,7 @@ export const AddToKBEditor = () => {
     const isDemoMode = env.NEXT_PUBLIC_IS_DEMO === "true";
 
     if (isDemoMode) {
+      setLoading(false);
       return toast({
         title: "Demo Mode",
         description:
@@ -28,6 +29,7 @@ export const AddToKBEditor = () => {
 
     try {
       if (typeof content !== "string") {
+        setLoading(false);
         return toast({
           title: "Error",
           description: "Content is required.",
@@ -36,14 +38,16 @@ export const AddToKBEditor = () => {
       }
 
       if (content.length > 10_00_000) {
+        setLoading(false);
         return toast({
           title: "Error",
-          description: "Content is too long. Max 10,000 characters.",
+          description: "Content is too long. Max 10 Million characters.",
           variant: "destructive",
         });
       }
 
       if (content.trim().length === 0) {
+        setLoading(false);
         return toast({
           title: "Error",
           description: "Content is required.",
@@ -52,6 +56,7 @@ export const AddToKBEditor = () => {
       }
 
       if (content.trim().length < 100) {
+        setLoading(false);
         return toast({
           title: "Error",
           description: "Content is too short. Min 100 characters.",
