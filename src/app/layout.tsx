@@ -2,11 +2,13 @@ import "@/styles/globals.css";
 import { Poppins, Roboto, Fira_Code, Lato } from "next/font/google";
 import { ToastProvider } from "@/components/ui/toast";
 import { Metadata } from "next";
+import { Toaster } from "@/components/ui/toaster";
+import { AppBar } from "./_providers/progress-bar";
 
 export const metadata: Metadata = {
-  title: "RAG Demo | Rebackk", // Title of the page, displayed in the browser tab.
+  title: "RAG Demo | Rebackk",
   description:
-    "Retrieval Augmented Generation Demo using Next.js, OLLAMA and VercelAI. For The Community, By Rebackk.", // Brief description of the page's content for SEO and sharing purposes.
+    "Retrieval Augmented Generation Demo using Next.js, OLLAMA and VercelAI. For The Community, By Rebackk.",
 };
 
 const poppins = Poppins({
@@ -41,13 +43,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <ToastProvider>
-          <main
-            className={`${poppins.variable} ${roboto.variable} ${firaCode.variable} ${lato.variable}`}
-          >
-            {children}
-          </main>
-        </ToastProvider>
+        <AppBar />
+        <Toaster />
+        <main
+          className={`${poppins.variable} ${roboto.variable} ${firaCode.variable} ${lato.variable}`}
+        >
+          {children}
+        </main>
       </body>
     </html>
   );

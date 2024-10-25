@@ -43,3 +43,7 @@ next-env.d.ts
 yarn.lock
 package-lock.json
 pnpm-lock.yaml
+
+# extras
+extras
+text.md
